@@ -11,8 +11,9 @@ const messages = [
   }
 ];
 
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -23,6 +24,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post("/new", (req, res, next) => {
+
   messages.push({
     text: req.body.message,
     user: req.body.authorName,
